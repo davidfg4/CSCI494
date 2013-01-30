@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface DG1ViewController : UIViewController
+{
+    @private
+    IBOutlet UILabel *label;
+    IBOutlet UIButton *button;
+    BOOL labelChanged;
+}
+
+-(IBAction) pressedButton;
 
 @end

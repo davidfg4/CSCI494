@@ -18,13 +18,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    DLog("test");
+    DLog("view controller has loaded");
+    labelChanged = false;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction) pressedButton
+{
+    DLog("button pressed");
+    if (labelChanged) {
+        label.text = @"iOS assignment 1";
+    } else {
+        label.text = @"You win!";
+    }
+    labelChanged = !labelChanged;
 }
 
 @end
