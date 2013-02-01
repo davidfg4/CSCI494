@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
+// no child view controller??
+// 67%
+
+
 #import "DG2ViewController.h"
 
 @interface DG2ViewController ()
