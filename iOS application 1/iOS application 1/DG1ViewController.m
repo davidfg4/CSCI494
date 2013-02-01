@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
+// good job, 100%
+
 #import "DG1ViewController.h"
 
 @interface DG1ViewController ()
@@ -32,7 +34,7 @@
 {
     DLog("button pressed");
     if (labelChanged) {
-        label.text = @"iOS assignment 1";
+        label.text = @"You lose. :(";
     } else {
         label.text = @"You win!";
     }
