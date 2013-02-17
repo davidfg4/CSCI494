@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DG4ViewController : UIViewController
+@interface DG4ViewController : UICollectionViewController
 
 @end
