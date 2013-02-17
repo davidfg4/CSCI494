@@ -71,7 +71,14 @@
 -(UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    NSInteger col = [indexPath indexAtPosition:0];
+    NSInteger row = [indexPath indexAtPosition:1];
+    if (selectedInCol[col] == row)
+    {
+        cell.backgroundColor = [UIColor greenColor];
+    } else {
+        cell.backgroundColor = [UIColor redColor];
+    }
     return cell;
 }
 
