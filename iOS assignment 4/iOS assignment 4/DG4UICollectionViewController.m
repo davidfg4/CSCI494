@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    for (NSInteger i = 0; i < 10; i++)
+    {
+        selectedInCol[0] = -1;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +53,8 @@
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
+    selectedInCol[[indexPath indexAtPosition:0]] = [indexPath indexAtPosition:1];
+    DLog("col %i, row %i pressed", [indexPath indexAtPosition:0], [indexPath indexAtPosition:1]);
 }
 
 -(UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

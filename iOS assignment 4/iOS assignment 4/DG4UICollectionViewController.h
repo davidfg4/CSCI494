@@ -11,3 +11,5 @@
 @interface DG4UICollectionViewController : UICollectionViewController
 
 @end
+
+NSInteger selectedInCol[10];
