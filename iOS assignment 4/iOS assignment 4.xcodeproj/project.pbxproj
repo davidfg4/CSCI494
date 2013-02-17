@@ -17,12 +17,12 @@
 		4924AEF716D168D200B5FBF8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4924AEF616D168D200B5FBF8 /* Default@2x.png */; };
 		4924AEF916D168D200B5FBF8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4924AEF816D168D200B5FBF8 /* Default-568h@2x.png */; };
 		4924AEFC16D168D200B5FBF8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4924AEFA16D168D200B5FBF8 /* MainStoryboard.storyboard */; };
-		4924AEFF16D168D200B5FBF8 /* DG4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924AEFE16D168D200B5FBF8 /* DG4ViewController.m */; };
 		4924AF0716D168D200B5FBF8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4924AF0616D168D200B5FBF8 /* SenTestingKit.framework */; };
 		4924AF0816D168D200B5FBF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4924AEE216D168D100B5FBF8 /* UIKit.framework */; };
 		4924AF0916D168D200B5FBF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4924AEE416D168D100B5FBF8 /* Foundation.framework */; };
 		4924AF1116D168D200B5FBF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4924AF0F16D168D200B5FBF8 /* InfoPlist.strings */; };
 		4924AF1416D168D200B5FBF8 /* iOS_assignment_4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924AF1316D168D200B5FBF8 /* iOS_assignment_4Tests.m */; };
+		4924AF2716D17BD900B5FBF8 /* DG4UICollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924AF2616D17BD900B5FBF8 /* DG4UICollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +50,14 @@
 		4924AEF616D168D200B5FBF8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4924AEF816D168D200B5FBF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4924AEFB16D168D200B5FBF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4924AEFD16D168D200B5FBF8 /* DG4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DG4ViewController.h; sourceTree = "<group>"; };
-		4924AEFE16D168D200B5FBF8 /* DG4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DG4ViewController.m; sourceTree = "<group>"; };
 		4924AF0516D168D200B5FBF8 /* iOS assignment 4Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS assignment 4Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4924AF0616D168D200B5FBF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4924AF0E16D168D200B5FBF8 /* iOS assignment 4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS assignment 4Tests-Info.plist"; sourceTree = "<group>"; };
 		4924AF1016D168D200B5FBF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4924AF1216D168D200B5FBF8 /* iOS_assignment_4Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_assignment_4Tests.h; sourceTree = "<group>"; };
 		4924AF1316D168D200B5FBF8 /* iOS_assignment_4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_assignment_4Tests.m; sourceTree = "<group>"; };
+		4924AF2516D17BD900B5FBF8 /* DG4UICollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DG4UICollectionViewController.h; sourceTree = "<group>"; };
+		4924AF2616D17BD900B5FBF8 /* DG4UICollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DG4UICollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +120,8 @@
 				4924AEF116D168D200B5FBF8 /* DG4AppDelegate.h */,
 				4924AEF216D168D200B5FBF8 /* DG4AppDelegate.m */,
 				4924AEFA16D168D200B5FBF8 /* MainStoryboard.storyboard */,
-				4924AEFD16D168D200B5FBF8 /* DG4ViewController.h */,
-				4924AEFE16D168D200B5FBF8 /* DG4ViewController.m */,
+				4924AF2516D17BD900B5FBF8 /* DG4UICollectionViewController.h */,
+				4924AF2616D17BD900B5FBF8 /* DG4UICollectionViewController.m */,
 				4924AEE916D168D100B5FBF8 /* Supporting Files */,
 			);
 			path = "iOS assignment 4";
@@ -273,7 +273,7 @@
 			files = (
 				4924AEEF16D168D100B5FBF8 /* main.m in Sources */,
 				4924AEF316D168D200B5FBF8 /* DG4AppDelegate.m in Sources */,
-				4924AEFF16D168D200B5FBF8 /* DG4ViewController.m in Sources */,
+				4924AF2716D17BD900B5FBF8 /* DG4UICollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

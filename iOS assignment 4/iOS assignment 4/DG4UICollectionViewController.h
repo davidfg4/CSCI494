@@ -1,5 +1,5 @@
 //
-//  DG4ViewController.h
+//  DG4UICollectionViewController.h
 //  iOS assignment 4
 //
 //  Created by David Gianforte on 2/17/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DG4ViewController : UICollectionViewController
+@interface DG4UICollectionViewController : UICollectionViewController
 
 @end
