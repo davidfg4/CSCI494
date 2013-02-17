@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
     for (NSInteger i = 0; i < 10; i++)
     {
-        selectedInCol[0] = -1;
+        selectedInCol[i] = -1;
     }
 }
 
@@ -53,8 +53,19 @@
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
-    selectedInCol[[indexPath indexAtPosition:0]] = [indexPath indexAtPosition:1];
-    DLog("col %i, row %i pressed", [indexPath indexAtPosition:0], [indexPath indexAtPosition:1]);
+    NSInteger col = [indexPath indexAtPosition:0];
+    NSInteger row = [indexPath indexAtPosition:1];
+    DLog("col %i, row %i pressed", col, row);
+    if (selectedInCol[col] != -1)
+    {
+        NSUInteger oldCellArray[2];
+        oldCellArray[0] = col;
+        oldCellArray[1] = selectedInCol[col];
+        NSIndexPath *oldCellIndexPath = [NSIndexPath indexPathWithIndexes:oldCellArray length:2];
+        UICollectionViewCell *oldCell = [collectionView cellForItemAtIndexPath:oldCellIndexPath];
+        oldCell.backgroundColor = [UIColor redColor];
+    }
+    selectedInCol[col] = row;
 }
 
 -(UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
