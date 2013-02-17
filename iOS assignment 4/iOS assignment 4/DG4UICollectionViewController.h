@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#define NUMCOLS 10
 
 @interface DG4UICollectionViewController : UICollectionViewController
 
 @end
 
-NSInteger selectedInCol[10];
+NSInteger selectedInCol[NUMCOLS];
+UIColor *selectedColor, *deselectedColor;

@@ -27,10 +27,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    for (NSInteger i = 0; i < 10; i++)
+    for (NSInteger i = 0; i < NUMCOLS; i++)
     {
         selectedInCol[i] = -1;
     }
+    selectedColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+    deselectedColor = [UIColor blueColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +43,7 @@
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 10;
+    return NUMCOLS;
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -52,10 +54,13 @@
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
-    NSInteger col = [indexPath indexAtPosition:0];
+        NSInteger col = [indexPath indexAtPosition:0];
     NSInteger row = [indexPath indexAtPosition:1];
     DLog("col %i, row %i pressed", col, row);
+    if (selectedInCol[col] == row)
+    {
+        return;
+    }
     if (selectedInCol[col] != -1)
     {
         NSUInteger oldCellArray[2];
@@ -63,8 +68,9 @@
         oldCellArray[1] = selectedInCol[col];
         NSIndexPath *oldCellIndexPath = [NSIndexPath indexPathWithIndexes:oldCellArray length:2];
         UICollectionViewCell *oldCell = [collectionView cellForItemAtIndexPath:oldCellIndexPath];
-        oldCell.backgroundColor = [UIColor redColor];
+        oldCell.backgroundColor = deselectedColor;
     }
+    cell.backgroundColor = selectedColor;
     selectedInCol[col] = row;
 }
 
@@ -75,9 +81,9 @@
     NSInteger row = [indexPath indexAtPosition:1];
     if (selectedInCol[col] == row)
     {
-        cell.backgroundColor = [UIColor greenColor];
+        cell.backgroundColor = selectedColor;
     } else {
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = deselectedColor;
     }
     return cell;
 }
