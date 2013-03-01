@@ -1,17 +1,14 @@
 //
-//  DG5ViewController.h
+//  DG5DatePickerViewController.h
 //  iOS assignment 5
 //
-//  Created by David Gianforte on 2/28/13.
+//  Created by David Gianforte on 3/1/13.
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "DG5WeatherData.h"
 
-@interface DG5ViewController : UIViewController
+@interface DG5DatePickerViewController : UIViewController
 
 @end
-
-
-

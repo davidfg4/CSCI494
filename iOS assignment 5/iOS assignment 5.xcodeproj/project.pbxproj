@@ -23,6 +23,9 @@
 		490CB27D16DFDEB300E8A5FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CB25816DFDEB200E8A5FE /* Foundation.framework */; };
 		490CB28516DFDEB300E8A5FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 490CB28316DFDEB300E8A5FE /* InfoPlist.strings */; };
 		490CB28816DFDEB300E8A5FE /* iOS_assignment_5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB28716DFDEB300E8A5FE /* iOS_assignment_5Tests.m */; };
+		490CB29F16DFFECB00E8A5FE /* DG5DataPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB29E16DFFECB00E8A5FE /* DG5DataPickerViewController.m */; };
+		490CB2A216E07A9700E8A5FE /* DG5WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB2A116E07A9700E8A5FE /* DG5WeatherData.m */; };
+		492D54B216E099430052F088 /* DG5DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492D54B116E099430052F088 /* DG5DatePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,12 @@
 		490CB28416DFDEB300E8A5FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		490CB28616DFDEB300E8A5FE /* iOS_assignment_5Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_assignment_5Tests.h; sourceTree = "<group>"; };
 		490CB28716DFDEB300E8A5FE /* iOS_assignment_5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_assignment_5Tests.m; sourceTree = "<group>"; };
+		490CB29D16DFFECB00E8A5FE /* DG5DataPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DG5DataPickerViewController.h; path = ../DG5DataPickerViewController.h; sourceTree = "<group>"; };
+		490CB29E16DFFECB00E8A5FE /* DG5DataPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DG5DataPickerViewController.m; path = ../DG5DataPickerViewController.m; sourceTree = "<group>"; };
+		490CB2A016E07A9700E8A5FE /* DG5WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DG5WeatherData.h; sourceTree = "<group>"; };
+		490CB2A116E07A9700E8A5FE /* DG5WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DG5WeatherData.m; sourceTree = "<group>"; };
+		492D54B016E099430052F088 /* DG5DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DG5DatePickerViewController.h; sourceTree = "<group>"; };
+		492D54B116E099430052F088 /* DG5DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DG5DatePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +126,18 @@
 		490CB25C16DFDEB200E8A5FE /* iOS assignment 5 */ = {
 			isa = PBXGroup;
 			children = (
+				492D54B016E099430052F088 /* DG5DatePickerViewController.h */,
+				492D54B116E099430052F088 /* DG5DatePickerViewController.m */,
+				490CB29D16DFFECB00E8A5FE /* DG5DataPickerViewController.h */,
+				490CB29E16DFFECB00E8A5FE /* DG5DataPickerViewController.m */,
 				490CB26516DFDEB200E8A5FE /* DG5AppDelegate.h */,
 				490CB26616DFDEB200E8A5FE /* DG5AppDelegate.m */,
 				490CB26E16DFDEB200E8A5FE /* MainStoryboard.storyboard */,
 				490CB27116DFDEB200E8A5FE /* DG5ViewController.h */,
 				490CB27216DFDEB200E8A5FE /* DG5ViewController.m */,
 				490CB25D16DFDEB200E8A5FE /* Supporting Files */,
+				490CB2A016E07A9700E8A5FE /* DG5WeatherData.h */,
+				490CB2A116E07A9700E8A5FE /* DG5WeatherData.m */,
 			);
 			path = "iOS assignment 5";
 			sourceTree = "<group>";
@@ -274,6 +289,9 @@
 				490CB26316DFDEB200E8A5FE /* main.m in Sources */,
 				490CB26716DFDEB200E8A5FE /* DG5AppDelegate.m in Sources */,
 				490CB27316DFDEB200E8A5FE /* DG5ViewController.m in Sources */,
+				490CB29F16DFFECB00E8A5FE /* DG5DataPickerViewController.m in Sources */,
+				490CB2A216E07A9700E8A5FE /* DG5WeatherData.m in Sources */,
+				492D54B216E099430052F088 /* DG5DatePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +466,7 @@
 				490CB28D16DFDEB300E8A5FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		490CB28E16DFDEB300E8A5FE /* Build configuration list for PBXNativeTarget "iOS assignment 5Tests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +475,7 @@
 				490CB29016DFDEB300E8A5FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

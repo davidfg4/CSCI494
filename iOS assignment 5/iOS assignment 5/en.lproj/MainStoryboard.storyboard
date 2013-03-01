@@ -1,26 +1,191 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KLD-Rr-0dS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="5">
+        <!--View Controller - test-->
+        <scene sceneID="bpC-BQ-a7T">
             <objects>
-                <viewController id="2" customClass="DG5ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
+                <viewController id="KLD-Rr-0dS" customClass="DG5ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaJ-TT-IKZ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edl-Sk-byX">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-RH-jF5">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select a date">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PCm-DI-6mN" kind="modal" modalTransitionStyle="partialCurl" id="F4N-zb-ZPf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgm-8E-KX9">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select data source">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rzP-iB-bnG" kind="modal" modalTransitionStyle="partialCurl" id="J69-BE-Zf3"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-29-1ez">
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3U5-RH-jF5" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Vd-Dp-8P6"/>
+                            <constraint firstItem="lgm-8E-KX9" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Crm-dy-B5k"/>
+                            <constraint firstItem="lgm-8E-KX9" firstAttribute="top" secondItem="3U5-RH-jF5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FWD-hY-QE6"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="trailing" secondItem="FaJ-TT-IKZ" secondAttribute="trailing" type="default" id="Isk-Kw-ul1"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" type="default" id="M4p-qr-f5Z"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="top" secondItem="lgm-8E-KX9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WMX-wh-7mQ"/>
+                            <constraint firstItem="3U5-RH-jF5" firstAttribute="top" secondItem="FaJ-TT-IKZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aw2-gh-bWZ"/>
+                            <constraint firstItem="fcP-29-1ez" firstAttribute="centerX" secondItem="edl-Sk-byX" secondAttribute="centerX" type="default" id="eQL-cu-nWO"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="bottom" secondItem="FaJ-TT-IKZ" secondAttribute="bottom" type="default" id="pjM-LK-eSl"/>
+                            <constraint firstItem="fcP-29-1ez" firstAttribute="centerY" secondItem="FaJ-TT-IKZ" secondAttribute="centerY" type="default" id="xPX-TE-EB6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="test" id="y4F-xK-aoT">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="irv-vT-LHG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataButton" destination="lgm-8E-KX9" id="yHc-Ds-QFF"/>
+                        <outlet property="dateButton" destination="3U5-RH-jF5" id="3Ix-Cv-AoQ"/>
+                        <outlet property="spinner" destination="fcP-29-1ez" id="WGS-W7-IMm"/>
+                        <outlet property="textBox" destination="edl-Sk-byX" id="hwd-LO-2Ub"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMv-eT-QT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="156" y="48"/>
+        </scene>
+        <!--Date Picker View Controller - Select date and data-->
+        <scene sceneID="g8d-hM-Vb9">
+            <objects>
+                <viewController id="PCm-DI-6mN" customClass="DG5DatePickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vHs-UY-50x">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEc-Ea-1j7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="zcZ-Nx-Yh0"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="PCm-DI-6mN" id="Ivl-Iv-n5V"/>
+                                    <outlet property="delegate" destination="PCm-DI-6mN" id="xyq-UC-FQl"/>
+                                    <outletCollection property="gestureRecognizers" destination="CrF-BQ-aWF" appends="YES" id="cga-iR-ai7"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jEc-Ea-1j7" firstAttribute="leading" secondItem="vHs-UY-50x" secondAttribute="leading" type="default" id="Qhu-II-Ihm"/>
+                            <constraint firstItem="jEc-Ea-1j7" firstAttribute="trailing" secondItem="vHs-UY-50x" secondAttribute="trailing" type="default" id="QrX-LX-K3g"/>
+                            <constraint firstItem="jEc-Ea-1j7" firstAttribute="bottom" secondItem="vHs-UY-50x" secondAttribute="bottom" type="default" id="hKI-ne-P6u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select date and data" id="lXW-9G-cKa"/>
+                    <connections>
+                        <outlet property="picker" destination="jEc-Ea-1j7" id="QzT-m4-AVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="thr-xE-r6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="CrF-BQ-aWF">
+                    <connections>
+                        <action selector="tappedPicker" destination="PCm-DI-6mN" id="PrB-6a-jvb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="696" y="-304"/>
+        </scene>
+        <!--Data Picker View Controller-->
+        <scene sceneID="0PH-BR-c8K">
+            <objects>
+                <viewController id="rzP-iB-bnG" customClass="DG5DataPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cCh-SU-c9f">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkv-ge-Z3E">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="dsV-8z-g9w"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="rzP-iB-bnG" id="Ml0-8x-lt8"/>
+                                    <outlet property="delegate" destination="rzP-iB-bnG" id="Q9d-HY-At6"/>
+                                    <outletCollection property="gestureRecognizers" destination="9PN-UV-WiQ" appends="YES" id="Nbc-MQ-vc4"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mkv-ge-Z3E" firstAttribute="leading" secondItem="cCh-SU-c9f" secondAttribute="leading" type="default" id="32Y-Kh-Hgb"/>
+                            <constraint firstItem="mkv-ge-Z3E" firstAttribute="bottom" secondItem="cCh-SU-c9f" secondAttribute="bottom" type="default" id="5aw-FE-mY0"/>
+                            <constraint firstItem="mkv-ge-Z3E" firstAttribute="trailing" secondItem="cCh-SU-c9f" secondAttribute="trailing" type="default" id="M9Z-Yb-bUb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="mkv-ge-Z3E" id="9hz-h1-wWp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qO-Ov-6RV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9PN-UV-WiQ">
+                    <connections>
+                        <action selector="tappedPicker" destination="rzP-iB-bnG" id="T53-Rk-jtI"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="696" y="296"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DG5DataPickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DG5DataPickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedPicker"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="DG5DatePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DG5DatePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedPicker"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="DG5ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DG5ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="textBox" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
