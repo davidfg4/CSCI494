@@ -16,7 +16,10 @@
 -(NSString*) getDate;
 -(NSString*) getDataTitle;
 -(NSInteger) getDateInt;
+-(void) nextDate;
+-(void) previousDate;
 -(NSInteger) getDataInt;
+-(NSString*) getIconName;
 
 @end
 

@@ -13,9 +13,6 @@
 		490CB26116DFDEB200E8A5FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 490CB25F16DFDEB200E8A5FE /* InfoPlist.strings */; };
 		490CB26316DFDEB200E8A5FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB26216DFDEB200E8A5FE /* main.m */; };
 		490CB26716DFDEB200E8A5FE /* DG5AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB26616DFDEB200E8A5FE /* DG5AppDelegate.m */; };
-		490CB26916DFDEB200E8A5FE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 490CB26816DFDEB200E8A5FE /* Default.png */; };
-		490CB26B16DFDEB200E8A5FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490CB26A16DFDEB200E8A5FE /* Default@2x.png */; };
-		490CB26D16DFDEB200E8A5FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490CB26C16DFDEB200E8A5FE /* Default-568h@2x.png */; };
 		490CB27016DFDEB200E8A5FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CB26E16DFDEB200E8A5FE /* MainStoryboard.storyboard */; };
 		490CB27316DFDEB200E8A5FE /* DG5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB27216DFDEB200E8A5FE /* DG5ViewController.m */; };
 		490CB27B16DFDEB300E8A5FE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CB27A16DFDEB300E8A5FE /* SenTestingKit.framework */; };
@@ -25,7 +22,20 @@
 		490CB28816DFDEB300E8A5FE /* iOS_assignment_5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB28716DFDEB300E8A5FE /* iOS_assignment_5Tests.m */; };
 		490CB29F16DFFECB00E8A5FE /* DG5DataPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB29E16DFFECB00E8A5FE /* DG5DataPickerViewController.m */; };
 		490CB2A216E07A9700E8A5FE /* DG5WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CB2A116E07A9700E8A5FE /* DG5WeatherData.m */; };
+		492CE8A417024D15009BAD46 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492CE8A317024D15009BAD46 /* Default-568h@2x.png */; };
 		492D54B216E099430052F088 /* DG5DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492D54B116E099430052F088 /* DG5DatePickerViewController.m */; };
+		49A0918A170214E60075A597 /* weather-clear-night200.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09182170214E60075A597 /* weather-clear-night200.png */; };
+		49A0918B170214E60075A597 /* weather-clear-night200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09183170214E60075A597 /* weather-clear-night200@2x.png */; };
+		49A0918C170214E60075A597 /* weather-clear200.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09184170214E60075A597 /* weather-clear200.png */; };
+		49A0918D170214E60075A597 /* weather-clear200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09185170214E60075A597 /* weather-clear200@2x.png */; };
+		49A0918E170214E60075A597 /* weather-showers200.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09186170214E60075A597 /* weather-showers200.png */; };
+		49A0918F170214E60075A597 /* weather-showers200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09187170214E60075A597 /* weather-showers200@2x.png */; };
+		49A09190170214E60075A597 /* weather-snow200.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09188170214E60075A597 /* weather-snow200.png */; };
+		49A09191170214E60075A597 /* weather-snow200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09189170214E60075A597 /* weather-snow200@2x.png */; };
+		49A091951702305A0075A597 /* weather-severe-alert200.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A091931702305A0075A597 /* weather-severe-alert200.png */; };
+		49A091961702305A0075A597 /* weather-severe-alert200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A091941702305A0075A597 /* weather-severe-alert200@2x.png */; };
+		49A09199170232B20075A597 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09197170232B20075A597 /* Default.png */; };
+		49A0919A170232B20075A597 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A09198170232B20075A597 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +59,6 @@
 		490CB26416DFDEB200E8A5FE /* iOS assignment 5-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS assignment 5-Prefix.pch"; sourceTree = "<group>"; };
 		490CB26516DFDEB200E8A5FE /* DG5AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DG5AppDelegate.h; sourceTree = "<group>"; };
 		490CB26616DFDEB200E8A5FE /* DG5AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DG5AppDelegate.m; sourceTree = "<group>"; };
-		490CB26816DFDEB200E8A5FE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		490CB26A16DFDEB200E8A5FE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		490CB26C16DFDEB200E8A5FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		490CB26F16DFDEB200E8A5FE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		490CB27116DFDEB200E8A5FE /* DG5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DG5ViewController.h; sourceTree = "<group>"; };
 		490CB27216DFDEB200E8A5FE /* DG5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DG5ViewController.m; sourceTree = "<group>"; };
@@ -65,8 +72,21 @@
 		490CB29E16DFFECB00E8A5FE /* DG5DataPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DG5DataPickerViewController.m; path = ../DG5DataPickerViewController.m; sourceTree = "<group>"; };
 		490CB2A016E07A9700E8A5FE /* DG5WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DG5WeatherData.h; sourceTree = "<group>"; };
 		490CB2A116E07A9700E8A5FE /* DG5WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DG5WeatherData.m; sourceTree = "<group>"; };
+		492CE8A317024D15009BAD46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		492D54B016E099430052F088 /* DG5DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DG5DatePickerViewController.h; sourceTree = "<group>"; };
 		492D54B116E099430052F088 /* DG5DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DG5DatePickerViewController.m; sourceTree = "<group>"; };
+		49A09182170214E60075A597 /* weather-clear-night200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear-night200.png"; sourceTree = "<group>"; };
+		49A09183170214E60075A597 /* weather-clear-night200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear-night200@2x.png"; sourceTree = "<group>"; };
+		49A09184170214E60075A597 /* weather-clear200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear200.png"; sourceTree = "<group>"; };
+		49A09185170214E60075A597 /* weather-clear200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear200@2x.png"; sourceTree = "<group>"; };
+		49A09186170214E60075A597 /* weather-showers200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-showers200.png"; sourceTree = "<group>"; };
+		49A09187170214E60075A597 /* weather-showers200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-showers200@2x.png"; sourceTree = "<group>"; };
+		49A09188170214E60075A597 /* weather-snow200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-snow200.png"; sourceTree = "<group>"; };
+		49A09189170214E60075A597 /* weather-snow200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-snow200@2x.png"; sourceTree = "<group>"; };
+		49A091931702305A0075A597 /* weather-severe-alert200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-severe-alert200.png"; sourceTree = "<group>"; };
+		49A091941702305A0075A597 /* weather-severe-alert200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-severe-alert200@2x.png"; sourceTree = "<group>"; };
+		49A09197170232B20075A597 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49A09198170232B20075A597 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,13 +165,23 @@
 		490CB25D16DFDEB200E8A5FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49A09197170232B20075A597 /* Default.png */,
+				492CE8A317024D15009BAD46 /* Default-568h@2x.png */,
+				49A09198170232B20075A597 /* Default@2x.png */,
+				49A091931702305A0075A597 /* weather-severe-alert200.png */,
+				49A091941702305A0075A597 /* weather-severe-alert200@2x.png */,
+				49A09182170214E60075A597 /* weather-clear-night200.png */,
+				49A09183170214E60075A597 /* weather-clear-night200@2x.png */,
+				49A09184170214E60075A597 /* weather-clear200.png */,
+				49A09185170214E60075A597 /* weather-clear200@2x.png */,
+				49A09186170214E60075A597 /* weather-showers200.png */,
+				49A09187170214E60075A597 /* weather-showers200@2x.png */,
+				49A09188170214E60075A597 /* weather-snow200.png */,
+				49A09189170214E60075A597 /* weather-snow200@2x.png */,
 				490CB25E16DFDEB200E8A5FE /* iOS assignment 5-Info.plist */,
 				490CB25F16DFDEB200E8A5FE /* InfoPlist.strings */,
 				490CB26216DFDEB200E8A5FE /* main.m */,
 				490CB26416DFDEB200E8A5FE /* iOS assignment 5-Prefix.pch */,
-				490CB26816DFDEB200E8A5FE /* Default.png */,
-				490CB26A16DFDEB200E8A5FE /* Default@2x.png */,
-				490CB26C16DFDEB200E8A5FE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,10 +278,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CB26116DFDEB200E8A5FE /* InfoPlist.strings in Resources */,
-				490CB26916DFDEB200E8A5FE /* Default.png in Resources */,
-				490CB26B16DFDEB200E8A5FE /* Default@2x.png in Resources */,
-				490CB26D16DFDEB200E8A5FE /* Default-568h@2x.png in Resources */,
 				490CB27016DFDEB200E8A5FE /* MainStoryboard.storyboard in Resources */,
+				49A0918A170214E60075A597 /* weather-clear-night200.png in Resources */,
+				49A0918B170214E60075A597 /* weather-clear-night200@2x.png in Resources */,
+				49A0918C170214E60075A597 /* weather-clear200.png in Resources */,
+				49A0918D170214E60075A597 /* weather-clear200@2x.png in Resources */,
+				49A0918E170214E60075A597 /* weather-showers200.png in Resources */,
+				49A0918F170214E60075A597 /* weather-showers200@2x.png in Resources */,
+				49A09190170214E60075A597 /* weather-snow200.png in Resources */,
+				49A09191170214E60075A597 /* weather-snow200@2x.png in Resources */,
+				49A091951702305A0075A597 /* weather-severe-alert200.png in Resources */,
+				49A091961702305A0075A597 /* weather-severe-alert200@2x.png in Resources */,
+				49A09199170232B20075A597 /* Default.png in Resources */,
+				49A0919A170232B20075A597 /* Default@2x.png in Resources */,
+				492CE8A417024D15009BAD46 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

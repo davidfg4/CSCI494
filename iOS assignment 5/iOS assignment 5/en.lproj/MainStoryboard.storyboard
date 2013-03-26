@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KLD-Rr-0dS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KLD-Rr-0dS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -14,10 +14,16 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edl-Sk-byX">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="GXD-lO-qb8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-RH-jF5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="23q-f2-eLY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Select a date">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,22 +49,67 @@
                                     <segue destination="rzP-iB-bnG" kind="modal" modalTransitionStyle="partialCurl" id="J69-BE-Zf3"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="weather-clear200.png" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-1b-57L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" type="user" id="95j-RC-0i5"/>
+                                    <constraint firstAttribute="height" constant="200" type="user" id="z2a-A5-tgo"/>
+                                </constraints>
+                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-29-1ez">
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-5c-ZlM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="DrB-CN-cYj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title=">">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextDate:" destination="KLD-Rr-0dS" eventType="touchUpInside" id="3y1-eW-yqb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJJ-DK-plH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="XK4-jF-mpY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previousDate:" destination="KLD-Rr-0dS" eventType="touchUpInside" id="Fz5-fl-1NM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3U5-RH-jF5" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Vd-Dp-8P6"/>
-                            <constraint firstItem="lgm-8E-KX9" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Crm-dy-B5k"/>
-                            <constraint firstItem="lgm-8E-KX9" firstAttribute="top" secondItem="3U5-RH-jF5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FWD-hY-QE6"/>
-                            <constraint firstItem="edl-Sk-byX" firstAttribute="trailing" secondItem="FaJ-TT-IKZ" secondAttribute="trailing" type="default" id="Isk-Kw-ul1"/>
+                            <constraint firstItem="aJJ-DK-plH" firstAttribute="top" secondItem="SHy-5c-ZlM" secondAttribute="top" type="default" id="7lR-iF-0PG"/>
+                            <constraint firstItem="fcP-29-1ez" firstAttribute="top" secondItem="FaJ-TT-IKZ" secondAttribute="top" constant="152" id="LXd-gL-HZJ"/>
+                            <constraint firstItem="SHy-5c-ZlM" firstAttribute="baseline" secondItem="3U5-RH-jF5" secondAttribute="baseline" type="default" id="M2Z-CI-l7e"/>
                             <constraint firstItem="edl-Sk-byX" firstAttribute="leading" secondItem="FaJ-TT-IKZ" secondAttribute="leading" type="default" id="M4p-qr-f5Z"/>
-                            <constraint firstItem="edl-Sk-byX" firstAttribute="top" secondItem="lgm-8E-KX9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WMX-wh-7mQ"/>
-                            <constraint firstItem="3U5-RH-jF5" firstAttribute="top" secondItem="FaJ-TT-IKZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aw2-gh-bWZ"/>
-                            <constraint firstItem="fcP-29-1ez" firstAttribute="centerX" secondItem="edl-Sk-byX" secondAttribute="centerX" type="default" id="eQL-cu-nWO"/>
-                            <constraint firstItem="edl-Sk-byX" firstAttribute="bottom" secondItem="FaJ-TT-IKZ" secondAttribute="bottom" type="default" id="pjM-LK-eSl"/>
-                            <constraint firstItem="fcP-29-1ez" firstAttribute="centerY" secondItem="FaJ-TT-IKZ" secondAttribute="centerY" type="default" id="xPX-TE-EB6"/>
+                            <constraint firstItem="lgm-8E-KX9" firstAttribute="centerX" secondItem="fcP-29-1ez" secondAttribute="centerX" type="default" id="Xwx-Qj-hXL"/>
+                            <constraint firstItem="aJJ-DK-plH" firstAttribute="top" secondItem="FaJ-TT-IKZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cVZ-3R-3Uz"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="top" secondItem="lgm-8E-KX9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dDt-6x-aYZ"/>
+                            <constraint firstItem="3U5-RH-jF5" firstAttribute="centerX" secondItem="fcP-29-1ez" secondAttribute="centerX" type="default" id="dhI-iD-cA4"/>
+                            <constraint firstItem="3U5-RH-jF5" firstAttribute="top" secondItem="FaJ-TT-IKZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eCu-Mf-k8E"/>
+                            <constraint firstItem="edl-Sk-byX" firstAttribute="bottom" secondItem="FaJ-TT-IKZ" secondAttribute="bottom" type="default" id="gDU-Vl-Bve"/>
+                            <constraint firstItem="ekc-1b-57L" firstAttribute="centerX" secondItem="fcP-29-1ez" secondAttribute="centerX" type="default" id="ge3-X9-47f"/>
+                            <constraint firstItem="ekc-1b-57L" firstAttribute="centerX" secondItem="FaJ-TT-IKZ" secondAttribute="centerX" type="default" id="kyA-Gl-r85"/>
+                            <constraint firstItem="SHy-5c-ZlM" firstAttribute="leading" secondItem="3U5-RH-jF5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="npO-my-vfb"/>
+                            <constraint firstItem="3U5-RH-jF5" firstAttribute="leading" secondItem="aJJ-DK-plH" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="oUk-Ka-Dfz"/>
+                            <constraint firstItem="ekc-1b-57L" firstAttribute="top" secondItem="3U5-RH-jF5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pL9-ch-tyH"/>
+                            <constraint firstItem="aJJ-DK-plH" firstAttribute="baseline" secondItem="SHy-5c-ZlM" secondAttribute="baseline" type="default" id="smy-cG-ZvI"/>
+                            <constraint firstItem="lgm-8E-KX9" firstAttribute="top" secondItem="ekc-1b-57L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wo9-Q4-EC2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="test" id="y4F-xK-aoT">
@@ -67,8 +118,11 @@
                     <connections>
                         <outlet property="dataButton" destination="lgm-8E-KX9" id="yHc-Ds-QFF"/>
                         <outlet property="dateButton" destination="3U5-RH-jF5" id="3Ix-Cv-AoQ"/>
+                        <outlet property="nextButton" destination="SHy-5c-ZlM" id="BDX-Vf-XWE"/>
+                        <outlet property="previousButton" destination="aJJ-DK-plH" id="8N0-gZ-nAK"/>
                         <outlet property="spinner" destination="fcP-29-1ez" id="WGS-W7-IMm"/>
                         <outlet property="textBox" destination="edl-Sk-byX" id="hwd-LO-2Ub"/>
+                        <outlet property="weatherIcon" destination="ekc-1b-57L" id="evZ-8j-euz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMv-eT-QT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,6 +209,9 @@
             <point key="canvasLocation" x="696" y="296"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weather-clear200.png" width="200" height="200"/>
+    </resources>
     <classes>
         <class className="DG5DataPickerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DG5DataPickerViewController.h"/>
@@ -173,10 +230,15 @@
         <class className="DG5ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DG5ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="nextDate:" candidateClass="UIButton"/>
+                <relationship kind="action" name="previousDate:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dataButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="textBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="weatherIcon" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

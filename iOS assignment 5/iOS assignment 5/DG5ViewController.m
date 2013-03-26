@@ -17,7 +17,10 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     IBOutlet UITextView *textBox;
     NSString* dataType;
     IBOutlet UIButton *dateButton;
+    IBOutlet UIButton *nextButton;
+    IBOutlet UIButton *previousButton;
     IBOutlet UIButton *dataButton;
+    IBOutlet UIImageView *weatherIcon;
 }
 
 @end
@@ -36,6 +39,8 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     
     [weatherData performSelectorInBackground:@selector(refreshWeather) withObject:nil];
     [textBox setText:@"test"];
+    UIImage* image = [UIImage imageNamed:@"weather-severe-alert200"];
+    weatherIcon.image = image;
 }
 
 -(void) setText:(NSString*) s
@@ -43,6 +48,7 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     [textBox setText:[masterWeatherData getData]];
     [dateButton setTitle:[masterWeatherData getDate] forState:UIControlStateNormal];
     [dataButton setTitle:[masterWeatherData getDataTitle] forState:UIControlStateNormal];
+    weatherIcon.image = [UIImage imageNamed:[masterWeatherData getIconName]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,16 +57,29 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)nextDate: (UIButton*)sender
+{
+    [masterWeatherData nextDate];
+}
+
+- (IBAction)previousDate: (UIButton*)sender
+{
+    [masterWeatherData previousDate];
+}
+
 -(void) weatherRefreshed:(NSNotification*)note
 {
-    //NSLog(@"%@", [masterWeatherData getData]);
-    //[textBox setText:[masterWeatherData getData]];
-    //[self.textBox setText:@"test"];
-    //self.textBox.text = [masterWeatherData getData];
     [spinner stopAnimating];
     NSLog(@"%@", [masterWeatherData getData]);
     [self performSelectorOnMainThread:@selector(setText:) withObject:nil waitUntilDone:YES];
-    //[textBox performSelectorOnMainThread:@selector(setText:) withObject:[masterWeatherData getData] waitUntilDone:YES];
+    if ([masterWeatherData getDateInt] == 0)
+        [previousButton setEnabled:NO];
+    else
+        [previousButton setEnabled:YES];
+    if ([masterWeatherData getDateInt] == 63)
+        [nextButton setEnabled:NO];
+    else
+        [nextButton setEnabled:YES];
 }
 
 @end
