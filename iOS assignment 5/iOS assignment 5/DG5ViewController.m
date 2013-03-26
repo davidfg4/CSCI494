@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
+// Good use of segues. 100%.
+
 #import "DG5ViewController.h"
 
 static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";

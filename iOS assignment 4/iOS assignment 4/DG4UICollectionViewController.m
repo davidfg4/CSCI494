@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
+// Good job, 100%.
+
 #import "DG4UICollectionViewController.h"
 
 @interface DG4UICollectionViewController ()
