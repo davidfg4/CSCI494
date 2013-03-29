@@ -23,6 +23,7 @@
 		49062F221705EF5300DA284F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49062EFD1705EF5200DA284F /* Foundation.framework */; };
 		49062F2A1705EF5300DA284F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49062F281705EF5300DA284F /* InfoPlist.strings */; };
 		49062F2D1705EF5300DA284F /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49062F2C1705EF5300DA284F /* WeatherAppTests.m */; };
+		49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		49062F291705EF5300DA284F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49062F2B1705EF5300DA284F /* WeatherAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherAppTests.h; sourceTree = "<group>"; };
 		49062F2C1705EF5300DA284F /* WeatherAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherAppTests.m; sourceTree = "<group>"; };
+		49C68FF51705F4BD00F2D95B /* DGWALoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWALoadingScreenViewController.h; sourceTree = "<group>"; };
+		49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWALoadingScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				49062F161705EF5300DA284F /* DGWAViewController.h */,
 				49062F171705EF5300DA284F /* DGWAViewController.m */,
 				49062F021705EF5200DA284F /* Supporting Files */,
+				49C68FF51705F4BD00F2D95B /* DGWALoadingScreenViewController.h */,
+				49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				49062F081705EF5200DA284F /* main.m in Sources */,
 				49062F0C1705EF5200DA284F /* DGWAAppDelegate.m in Sources */,
 				49062F181705EF5300DA284F /* DGWAViewController.m in Sources */,
+				49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +454,7 @@
 				49062F321705EF5300DA284F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49062F331705EF5300DA284F /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +463,7 @@
 				49062F351705EF5300DA284F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
