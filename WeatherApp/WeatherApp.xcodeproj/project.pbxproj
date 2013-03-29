@@ -24,6 +24,7 @@
 		49062F2A1705EF5300DA284F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49062F281705EF5300DA284F /* InfoPlist.strings */; };
 		49062F2D1705EF5300DA284F /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49062F2C1705EF5300DA284F /* WeatherAppTests.m */; };
 		49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */; };
+		49C68FFB1706065000F2D95B /* DGWAWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C68FFA1706065000F2D95B /* DGWAWeatherData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		49062F2C1705EF5300DA284F /* WeatherAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherAppTests.m; sourceTree = "<group>"; };
 		49C68FF51705F4BD00F2D95B /* DGWALoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWALoadingScreenViewController.h; sourceTree = "<group>"; };
 		49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWALoadingScreenViewController.m; sourceTree = "<group>"; };
+		49C68FF91706065000F2D95B /* DGWAWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWAWeatherData.h; sourceTree = "<group>"; };
+		49C68FFA1706065000F2D95B /* DGWAWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWAWeatherData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +123,16 @@
 		49062F011705EF5200DA284F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				49062F131705EF5300DA284F /* MainStoryboard.storyboard */,
 				49062F0A1705EF5200DA284F /* DGWAAppDelegate.h */,
 				49062F0B1705EF5200DA284F /* DGWAAppDelegate.m */,
-				49062F131705EF5300DA284F /* MainStoryboard.storyboard */,
-				49062F161705EF5300DA284F /* DGWAViewController.h */,
-				49062F171705EF5300DA284F /* DGWAViewController.m */,
-				49062F021705EF5200DA284F /* Supporting Files */,
 				49C68FF51705F4BD00F2D95B /* DGWALoadingScreenViewController.h */,
 				49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */,
+				49062F161705EF5300DA284F /* DGWAViewController.h */,
+				49062F171705EF5300DA284F /* DGWAViewController.m */,
+				49C68FF91706065000F2D95B /* DGWAWeatherData.h */,
+				49C68FFA1706065000F2D95B /* DGWAWeatherData.m */,
+				49062F021705EF5200DA284F /* Supporting Files */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				49062F0C1705EF5200DA284F /* DGWAAppDelegate.m in Sources */,
 				49062F181705EF5300DA284F /* DGWAViewController.m in Sources */,
 				49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */,
+				49C68FFB1706065000F2D95B /* DGWAWeatherData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
