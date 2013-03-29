@@ -39,13 +39,20 @@
         image = [UIImage imageNamed:@"Default"];
     }
     splashScreen.image = image;
-    NSLog(@"here");
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"here");
+    sleep(2);
+    NSLog(@"test");
+    [self performSegueWithIdentifier:@"showMain" sender:0];
 }
 
 @end
