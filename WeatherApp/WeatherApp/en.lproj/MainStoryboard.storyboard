@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6q-D1-TI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="415"/>
+            <point key="canvasLocation" x="1364" y="823"/>
         </scene>
         <!--View Controller - Tomorrow-->
         <scene sceneID="KSi-15-5er">
@@ -67,16 +67,19 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tomorrow's weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwe-PC-ZNm">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u31-Il-NeV">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="tLW-t2-YkD" kind="embed" id="J6O-52-iIb"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uwe-PC-ZNm" firstAttribute="centerX" secondItem="zMa-Ca-iT6" secondAttribute="centerX" type="default" id="fJY-xf-kVj"/>
-                            <constraint firstItem="uwe-PC-ZNm" firstAttribute="top" secondItem="zMa-Ca-iT6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="wgo-Xe-LiG"/>
+                            <constraint firstItem="u31-Il-NeV" firstAttribute="bottom" secondItem="zMa-Ca-iT6" secondAttribute="bottom" type="default" id="Cd4-Aj-S1e"/>
+                            <constraint firstItem="u31-Il-NeV" firstAttribute="leading" secondItem="zMa-Ca-iT6" secondAttribute="leading" type="default" id="Gw6-eL-9n8"/>
+                            <constraint firstItem="u31-Il-NeV" firstAttribute="top" secondItem="zMa-Ca-iT6" secondAttribute="top" type="default" id="Lsq-Pr-PWD"/>
+                            <constraint firstItem="u31-Il-NeV" firstAttribute="trailing" secondItem="zMa-Ca-iT6" secondAttribute="trailing" type="default" id="Ynx-QX-H5P"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tomorrow" id="77V-ct-ClH"/>
@@ -85,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="1364" y="262"/>
         </scene>
-        <!--View Controller - Today-->
+        <!--View Controller - In a bit-->
         <scene sceneID="1YZ-EM-ykh">
             <objects>
                 <viewController id="3QX-ax-Y5M" sceneMemberID="viewController">
@@ -93,19 +96,22 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Today's weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cth-qS-wvy">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-5h-ux4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="tLW-t2-YkD" kind="embed" id="cgw-bH-97W"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cth-qS-wvy" firstAttribute="centerX" secondItem="vex-X4-ZOj" secondAttribute="centerX" type="default" id="ZOv-13-enW"/>
-                            <constraint firstItem="cth-qS-wvy" firstAttribute="top" secondItem="vex-X4-ZOj" secondAttribute="top" constant="20" symbolic="YES" type="default" id="yXd-t1-xGQ"/>
+                            <constraint firstItem="aAm-5h-ux4" firstAttribute="top" secondItem="vex-X4-ZOj" secondAttribute="top" type="default" id="8DW-GU-SvF"/>
+                            <constraint firstItem="aAm-5h-ux4" firstAttribute="leading" secondItem="vex-X4-ZOj" secondAttribute="leading" type="default" id="Ex6-ZE-haI"/>
+                            <constraint firstItem="aAm-5h-ux4" firstAttribute="bottom" secondItem="vex-X4-ZOj" secondAttribute="bottom" type="default" id="GN5-qk-haU"/>
+                            <constraint firstItem="aAm-5h-ux4" firstAttribute="trailing" secondItem="vex-X4-ZOj" secondAttribute="trailing" type="default" id="PgN-vs-HQz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" id="41m-Fk-N5l"/>
+                    <tabBarItem key="tabBarItem" title="In a bit" id="41m-Fk-N5l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cj-yb-kAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +121,7 @@
         <scene sceneID="eGh-8h-AlW">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="loZ-NH-2j5" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g8A-sl-Vxg">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -130,6 +136,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVt-Wv-JB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592" y="79"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yaq-PO-bUe">
+            <objects>
+                <viewController id="tLW-t2-YkD" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="d8U-ia-L2x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RT-6d-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="12"/>
         </scene>
     </scenes>
     <resources>
@@ -151,4 +172,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cgw-bH-97W"/>
+    </inferredMetricsTieBreakers>
 </document>
