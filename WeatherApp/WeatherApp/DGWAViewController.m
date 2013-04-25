@@ -13,11 +13,15 @@
 @end
 
 @implementation DGWAViewController
+{
+    IBOutlet UILabel *temp;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [temp setText:[[NSString alloc] initWithFormat:@"%3.0f °F", [masterWeatherData KtoF:[masterWeatherData getAvgTemp]]]];
 }
 
 - (void)didReceiveMemoryWarning

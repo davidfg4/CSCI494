@@ -25,6 +25,8 @@
 		49062F2D1705EF5300DA284F /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49062F2C1705EF5300DA284F /* WeatherAppTests.m */; };
 		49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */; };
 		49C68FFB1706065000F2D95B /* DGWAWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C68FFA1706065000F2D95B /* DGWAWeatherData.m */; };
+		49F6EEE217298F79006DE3E9 /* DGWANowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6EEE117298F79006DE3E9 /* DGWANowViewController.m */; };
+		49F6EEE917299127006DE3E9 /* DGWATomorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6EEE817299127006DE3E9 /* DGWATomorrowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 49062EF61705EF5200DA284F;
 			remoteInfo = WeatherApp;
+		};
+		49C9D52117189678004B4B8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49C9D51817189677004B4B8F /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		49C9D52317189678004B4B8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49C9D51817189677004B4B8F /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
+		49C9D52517189A63004B4B8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49C9D51817189677004B4B8F /* CorePlot.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = CorePlot;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,6 +87,11 @@
 		49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWALoadingScreenViewController.m; sourceTree = "<group>"; };
 		49C68FF91706065000F2D95B /* DGWAWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWAWeatherData.h; sourceTree = "<group>"; };
 		49C68FFA1706065000F2D95B /* DGWAWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWAWeatherData.m; sourceTree = "<group>"; };
+		49C9D51817189677004B4B8F /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = ../../../Downloads/CorePlot_1.2/Source/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
+		49F6EEE017298F79006DE3E9 /* DGWANowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWANowViewController.h; sourceTree = "<group>"; };
+		49F6EEE117298F79006DE3E9 /* DGWANowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWANowViewController.m; sourceTree = "<group>"; };
+		49F6EEE717299127006DE3E9 /* DGWATomorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGWATomorrowViewController.h; sourceTree = "<group>"; };
+		49F6EEE817299127006DE3E9 /* DGWATomorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGWATomorrowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +121,7 @@
 		49062EEC1705EF5200DA284F = {
 			isa = PBXGroup;
 			children = (
+				49C9D51817189677004B4B8F /* CorePlot.xcodeproj */,
 				49062F011705EF5200DA284F /* WeatherApp */,
 				49062F251705EF5300DA284F /* WeatherAppTests */,
 				49062EFA1705EF5200DA284F /* Frameworks */,
@@ -126,13 +155,17 @@
 				49062F131705EF5300DA284F /* MainStoryboard.storyboard */,
 				49062F0A1705EF5200DA284F /* DGWAAppDelegate.h */,
 				49062F0B1705EF5200DA284F /* DGWAAppDelegate.m */,
+				49C68FF91706065000F2D95B /* DGWAWeatherData.h */,
+				49C68FFA1706065000F2D95B /* DGWAWeatherData.m */,
 				49C68FF51705F4BD00F2D95B /* DGWALoadingScreenViewController.h */,
 				49C68FF61705F4BD00F2D95B /* DGWALoadingScreenViewController.m */,
 				49062F161705EF5300DA284F /* DGWAViewController.h */,
 				49062F171705EF5300DA284F /* DGWAViewController.m */,
-				49C68FF91706065000F2D95B /* DGWAWeatherData.h */,
-				49C68FFA1706065000F2D95B /* DGWAWeatherData.m */,
 				49062F021705EF5200DA284F /* Supporting Files */,
+				49F6EEE017298F79006DE3E9 /* DGWANowViewController.h */,
+				49F6EEE117298F79006DE3E9 /* DGWANowViewController.m */,
+				49F6EEE717299127006DE3E9 /* DGWATomorrowViewController.h */,
+				49F6EEE817299127006DE3E9 /* DGWATomorrowViewController.m */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -170,6 +203,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		49C9D51917189677004B4B8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49C9D52217189678004B4B8F /* CorePlot.framework */,
+				49C9D52417189678004B4B8F /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +226,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				49C9D52617189A63004B4B8F /* PBXTargetDependency */,
 			);
 			name = WeatherApp;
 			productName = WeatherApp;
@@ -229,6 +272,12 @@
 			mainGroup = 49062EEC1705EF5200DA284F;
 			productRefGroup = 49062EF81705EF5200DA284F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 49C9D51917189677004B4B8F /* Products */;
+					ProjectRef = 49C9D51817189677004B4B8F /* CorePlot.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				49062EF61705EF5200DA284F /* WeatherApp */,
@@ -236,6 +285,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		49C9D52217189678004B4B8F /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = 49C9D52117189678004B4B8F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49C9D52417189678004B4B8F /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 49C9D52317189678004B4B8F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		49062EF51705EF5200DA284F /* Resources */ = {
@@ -286,6 +352,8 @@
 				49062F181705EF5300DA284F /* DGWAViewController.m in Sources */,
 				49C68FF71705F4BD00F2D95B /* DGWALoadingScreenViewController.m in Sources */,
 				49C68FFB1706065000F2D95B /* DGWAWeatherData.m in Sources */,
+				49F6EEE217298F79006DE3E9 /* DGWANowViewController.m in Sources */,
+				49F6EEE917299127006DE3E9 /* DGWATomorrowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +372,11 @@
 			isa = PBXTargetDependency;
 			target = 49062EF61705EF5200DA284F /* WeatherApp */;
 			targetProxy = 49062F231705EF5300DA284F /* PBXContainerItemProxy */;
+		};
+		49C9D52617189A63004B4B8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CorePlot;
+			targetProxy = 49C9D52517189A63004B4B8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -10,6 +10,15 @@
 
 @interface DGWAWeatherData : NSObject
 
+-(void) setWeatherTime: (NSInteger) weatherTime;
+-(NSString*) getWeatherName;
+
+-(float) getAvgTemp;
+
+-(float) KtoF:(float)k;
+-(float) CtoF:(float)k;
+
 @end
 
 DGWAWeatherData *masterWeatherData;
+
