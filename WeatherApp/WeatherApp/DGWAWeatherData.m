@@ -72,6 +72,31 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     return average / (2 * [collections[3][@"values"][date][@"predictions"] count]);
 }
 
+-(NSString*) getIconName
+{
+    int i;
+    BOOL day = [collections[0][@"values"][date][@"date"] hasSuffix:@"00:00:00.000Z"] || [collections[0][@"values"][date][@"date"] hasSuffix:@"18:00:00.000Z"]; // is day at noon and 6 pm, MDT
+    float snow, rain;
+    snow = 0.0;
+    rain = 0.0;
+    for (i = 0; i < [collections[0][@"values"][date][@"predictions"] count]; i++) {
+        snow = snow + [collections[0][@"values"][date][@"predictions"][i] floatValue];
+        rain = rain + [collections[1][@"values"][date][@"predictions"][i] floatValue];
+    }
+    snow = snow / [collections[0][@"values"][date][@"predictions"] count];
+    rain = rain / [collections[1][@"values"][date][@"predictions"] count];
+    NSLog(@"%f", rain);
+    if (snow > .5 && snow > rain) {
+        return @"weather-snow200";
+    } else if (rain > .5) {
+        return @"weather-showers200";
+    } else if (day) {
+        return @"weather-clear200";
+    } else {
+        return @"weather-clear-night200";
+    }
+}
+
 -(float) KtoF:(float)k
 {
     return k * 9.0/5.0 - 459.67;
