@@ -14,14 +14,20 @@
 
 @implementation DGWAViewController
 {
-    IBOutlet UILabel *temp;
+    IBOutlet UILabel *tempF;
+    IBOutlet UILabel *tempC;
+    IBOutlet UIImageView *weatherIcon;
+    IBOutlet UILabel *date;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [temp setText:[[NSString alloc] initWithFormat:@"%3.0f °F", [masterWeatherData KtoF:[masterWeatherData getAvgTemp]]]];
+    [tempF setText:[[NSString alloc] initWithFormat:@"%3.0f °F", [masterWeatherData KtoF:[masterWeatherData getAvgTemp]]]];
+    [tempC setText:[[NSString alloc] initWithFormat:@"%3.1f °C", [masterWeatherData KtoC:[masterWeatherData getAvgTemp]]]];
+    weatherIcon.image = [UIImage imageNamed:[masterWeatherData getIconName]];
+    [date setText:[masterWeatherData getWeatherName]];
 }
 
 - (void)didReceiveMemoryWarning

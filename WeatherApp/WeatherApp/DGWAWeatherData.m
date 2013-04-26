@@ -48,7 +48,6 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
     {
         date = 0;
     } else {
-        // TODO: fixme
         date = 2;
         while ([collections[0][@"values"][date][@"date"] hasSuffix:@"18:00:00.000Z"] == FALSE) {
             date++;

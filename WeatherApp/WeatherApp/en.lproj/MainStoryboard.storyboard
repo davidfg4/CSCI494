@@ -33,25 +33,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller - Graph-->
+        <!--Graph View Controller - Graph-->
         <scene sceneID="z6V-ao-Guy">
             <objects>
-                <viewController id="V09-Cs-iSm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="O97-Zl-APZ">
+                <viewController id="V09-Cs-iSm" customClass="DGWAGraphViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O97-Zl-APZ" customClass="CPTGraphHostingView">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Graph" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-fS-umV">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Hkv-fS-umV" firstAttribute="top" secondItem="O97-Zl-APZ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Hzb-xK-gj5"/>
-                            <constraint firstItem="Hkv-fS-umV" firstAttribute="centerX" secondItem="O97-Zl-APZ" secondAttribute="centerX" type="default" id="PLY-ED-mUj"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" id="OUo-0B-b5D"/>
                 </viewController>
@@ -153,16 +142,48 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30 °C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3f-Hr-5sY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="bbh-Ii-1ti"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-rQ-zHR">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1X2-3V-egJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="pTz-ri-Dtq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-LX-Oz4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="CmU-zC-KLE"/>
+                                    <constraint firstAttribute="height" constant="21" id="Rwk-ph-sQp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yUk-rQ-zHR" firstAttribute="centerX" secondItem="wuD-LX-Oz4" secondAttribute="centerX" type="default" id="9By-GE-skh"/>
+                            <constraint firstAttribute="trailing" secondItem="v3f-Hr-5sY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AZ2-EA-B6q"/>
+                            <constraint firstItem="yUk-rQ-zHR" firstAttribute="top" secondItem="Gsq-xS-Yre" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B4W-KK-9xq"/>
                             <constraint firstItem="Gsq-xS-Yre" firstAttribute="leading" secondItem="d8U-ia-L2x" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dj7-XI-zKC"/>
+                            <constraint firstItem="v3f-Hr-5sY" firstAttribute="top" secondItem="d8U-ia-L2x" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ToZ-h6-Y4l"/>
+                            <constraint firstItem="wuD-LX-Oz4" firstAttribute="centerX" secondItem="d8U-ia-L2x" secondAttribute="centerX" type="default" id="XOW-Ma-CDC"/>
+                            <constraint firstItem="wuD-LX-Oz4" firstAttribute="bottom" secondItem="d8U-ia-L2x" secondAttribute="bottom" type="default" id="f7I-JJ-REp"/>
                             <constraint firstItem="Gsq-xS-Yre" firstAttribute="top" secondItem="d8U-ia-L2x" secondAttribute="top" constant="20" symbolic="YES" type="default" id="iaR-h0-IWL"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="temp" destination="Gsq-xS-Yre" id="vS7-EJ-vqx"/>
+                        <outlet property="date" destination="wuD-LX-Oz4" id="E3B-Rg-KUG"/>
+                        <outlet property="tempC" destination="v3f-Hr-5sY" id="mxo-Ch-P75"/>
+                        <outlet property="tempF" destination="Gsq-xS-Yre" id="rjS-NI-G2k"/>
+                        <outlet property="weatherIcon" destination="yUk-rQ-zHR" id="7GN-5F-nve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RT-6d-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,6 +195,12 @@
         <image name="Default.png" width="320" height="480"/>
     </resources>
     <classes>
+        <class className="CPTGraphHostingView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CPTGraphHostingView.h"/>
+        </class>
+        <class className="DGWAGraphViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DGWAGraphViewController.h"/>
+        </class>
         <class className="DGWALoadingScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DGWALoadingScreenViewController.h"/>
             <relationships>
@@ -189,8 +216,10 @@
         <class className="DGWAViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DGWAViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="temp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tempC" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tempF" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weatherIcon" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -203,6 +232,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cgw-bH-97W"/>
+        <segue reference="J6O-52-iIb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,9 +14,10 @@
 -(NSString*) getWeatherName;
 
 -(float) getAvgTemp;
+-(NSString*) getIconName;
 
 -(float) KtoF:(float)k;
--(float) CtoF:(float)k;
+-(float) KtoC:(float)k;
 
 @end
 
