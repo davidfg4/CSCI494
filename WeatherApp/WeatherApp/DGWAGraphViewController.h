@@ -19,6 +19,8 @@
     NSMutableArray *rainData;
     NSMutableArray *snowData;
     NSMutableArray *lineData;
+    NSMutableArray *rainDevData;
+    NSMutableArray *snowDevData;
 }
 
 @property (readwrite, strong, nonatomic) NSMutableArray *tempData;
@@ -26,5 +28,7 @@
 @property (readwrite, strong, nonatomic) NSMutableArray *rainData;
 @property (readwrite, strong, nonatomic) NSMutableArray *snowData;
 @property (readwrite, strong, nonatomic) NSMutableArray *lineData;
+@property (readwrite, strong, nonatomic) NSMutableArray *rainDevData;
+@property (readwrite, strong, nonatomic) NSMutableArray *snowDevData;
 
 @end

@@ -22,6 +22,8 @@
 -(NSMutableArray *) getTempDeviation;
 -(NSMutableArray *) getRains;
 -(NSMutableArray *) getSnows;
+-(NSMutableArray *) getRainDeviation;
+-(NSMutableArray *) getSnowDeviation;
 
 -(float) KtoF:(float)k;
 -(float) KtoC:(float)k;

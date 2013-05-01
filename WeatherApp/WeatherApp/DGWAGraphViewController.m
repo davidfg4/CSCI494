@@ -18,6 +18,8 @@
 @synthesize rainData;
 @synthesize snowData;
 @synthesize lineData;
+@synthesize rainDevData;
+@synthesize snowDevData;
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
@@ -75,14 +77,14 @@
     dataSourceLinePlot.dataSource    = self;
     [graph addPlot:dataSourceLinePlot];
     
-    // Graph rain
+    // Graph snow std deviation
     dataSourceLinePlot = [[CPTScatterPlot alloc] init];
     lineStyle   = [CPTMutableLineStyle lineStyle];
     lineStyle.miterLimit             = 1.0f;
-    lineStyle.lineWidth              = 3.0f;
-    lineStyle.lineColor              = [CPTColor greenColor];
+    lineStyle.lineWidth              = 0.5f;
+    lineStyle.lineColor              = [CPTColor blueColor];
     dataSourceLinePlot.dataLineStyle = lineStyle;
-    dataSourceLinePlot.identifier    = @"Rain";
+    dataSourceLinePlot.identifier    = @"Snow Dev";
     dataSourceLinePlot.dataSource    = self;
     [graph addPlot:dataSourceLinePlot];
     
@@ -94,6 +96,28 @@
     lineStyle.lineColor              = [CPTColor blueColor];
     dataSourceLinePlot.dataLineStyle = lineStyle;
     dataSourceLinePlot.identifier    = @"Snow";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph rain std deviation
+    dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.miterLimit             = 1.0f;
+    lineStyle.lineWidth              = 0.5f;
+    lineStyle.lineColor              = [CPTColor greenColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Rain Dev";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph rain
+    dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.miterLimit             = 1.0f;
+    lineStyle.lineWidth              = 3.0f;
+    lineStyle.lineColor              = [CPTColor greenColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Rain";
     dataSourceLinePlot.dataSource    = self;
     [graph addPlot:dataSourceLinePlot];
     
@@ -158,6 +182,8 @@
     self.tempDevData = [masterWeatherData getTempDeviation];
     self.rainData = [masterWeatherData getRains];
     self.snowData = [masterWeatherData getSnows];
+    self.rainDevData = [masterWeatherData getRainDeviation];
+    self.snowDevData = [masterWeatherData getSnowDeviation];
     
     self.lineData = [NSMutableArray arrayWithCapacity:100];
     id xid = [NSNumber numberWithFloat:0];
@@ -191,8 +217,12 @@
         return [rainData count];
     } else if ( [(NSString *)plot.identifier isEqualToString:@"Snow"] ) {
         return [snowData count];
-    }else if ( [(NSString *)plot.identifier isEqualToString:@"Line"] ) {
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Line"] ) {
         return [lineData count];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Rain Dev"] ) {
+        return [rainDevData count];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Snow Dev"] ) {
+        return [snowDevData count];
     }
     return [tempData count];
 }
@@ -212,6 +242,10 @@
         num = [[snowData objectAtIndex:index] valueForKey:key];
     } else if ( [(NSString *)plot.identifier isEqualToString:@"Line"] ) {
         num = [[lineData objectAtIndex:index] valueForKey:key];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Rain Dev"] ) {
+        num = [[rainDevData objectAtIndex:index] valueForKey:key];
+    }else if ( [(NSString *)plot.identifier isEqualToString:@"Snow Dev"] ) {
+        num = [[snowDevData objectAtIndex:index] valueForKey:key];
     }
     return num;
 }

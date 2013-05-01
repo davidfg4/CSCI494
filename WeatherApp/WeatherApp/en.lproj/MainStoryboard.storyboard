@@ -44,12 +44,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2k-Ob-td2" customClass="CPTGraphHostingView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="red: temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-LR-gKM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Standard deviation bars are shown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-jg-NOp">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="green: rain, blue: snow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbB-bo-4sh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Red: Temperature in Farenheight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-LR-gKM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Green: Rain, Blue: Snow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbB-bo-4sh">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,14 +62,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="VbB-bo-4sh" secondAttribute="bottom" constant="40" id="5aN-RS-aXe"/>
-                            <constraint firstItem="fY0-LR-gKM" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9xh-Cw-gEN"/>
+                            <constraint firstItem="VbB-bo-4sh" firstAttribute="top" secondItem="b2k-Ob-td2" secondAttribute="bottom" type="user" id="7CZ-bw-oab"/>
+                            <constraint firstItem="fY0-LR-gKM" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9c8-IP-nfw"/>
+                            <constraint firstItem="5cL-jg-NOp" firstAttribute="bottom" secondItem="O97-Zl-APZ" secondAttribute="bottom" type="default" id="DjS-tQ-OlL"/>
                             <constraint firstItem="b2k-Ob-td2" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" type="default" id="Ggq-zz-Ske"/>
+                            <constraint firstAttribute="bottom" secondItem="fY0-LR-gKM" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Nhe-H7-AcN"/>
                             <constraint firstItem="b2k-Ob-td2" firstAttribute="trailing" secondItem="O97-Zl-APZ" secondAttribute="trailing" type="default" id="Nli-qn-0mX"/>
+                            <constraint firstItem="5cL-jg-NOp" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aBG-xj-pll"/>
                             <constraint firstItem="b2k-Ob-td2" firstAttribute="top" secondItem="O97-Zl-APZ" secondAttribute="top" type="default" id="j1X-R2-V6R"/>
-                            <constraint firstItem="VbB-bo-4sh" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lD8-Cs-t0I"/>
-                            <constraint firstAttribute="bottom" secondItem="b2k-Ob-td2" secondAttribute="bottom" constant="70" id="vnd-Yd-5Qf"/>
-                            <constraint firstAttribute="bottom" secondItem="fY0-LR-gKM" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="wgA-7H-qOG"/>
+                            <constraint firstAttribute="bottom" secondItem="VbB-bo-4sh" secondAttribute="bottom" constant="41" id="lsK-xP-l2I"/>
+                            <constraint firstItem="VbB-bo-4sh" firstAttribute="leading" secondItem="O97-Zl-APZ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tMa-Vh-dkp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" id="OUo-0B-b5D"/>
@@ -244,6 +251,9 @@
         </class>
         <class className="DGWAGraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DGWAGraphViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="graphView" candidateClass="CPTGraphHostingView"/>
+            </relationships>
         </class>
         <class className="DGWALoadingScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DGWALoadingScreenViewController.h"/>

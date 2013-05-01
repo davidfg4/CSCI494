@@ -210,14 +210,93 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
         stddev = sqrt(stddev / ([tmax2m[0][@"predictions"] count] * 2));
         id y = [NSNumber numberWithFloat:yavg];
         [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
-        y = [NSNumber numberWithFloat:(yavg + stddev)];
-        [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
-        y = [NSNumber numberWithFloat:(yavg - stddev)];
-        [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
-        y = [NSNumber numberWithFloat:yavg];
-        [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        if ([crainsfc[i][@"date"] hasSuffix:@"00:00:00.000Z"] || [crainsfc[i][@"date"] hasSuffix:@"12:00:00.000Z"])
+        {
+            y = [NSNumber numberWithFloat:(yavg + stddev)];
+            [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+            y = [NSNumber numberWithFloat:(yavg - stddev)];
+            [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+            y = [NSNumber numberWithFloat:yavg];
+            [temps addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        }
     }
     return temps;
+}
+
+-(float) normalizeForGraph: (float) i
+{
+    i = i * 20;
+    if (i > 20)
+        i = 20;
+    if (i < 0)
+        i = 0;
+    return i;
+}
+
+-(NSMutableArray *) getRainDeviation
+{
+    int i, j;
+    NSMutableArray *rains = [NSMutableArray arrayWithCapacity:100];
+    for (i = 0; i < [crainsfc count]; i++) {
+        id x = [NSNumber numberWithFloat:0 + i * 0.25];
+        float yavg = 0.0;
+        for (j = 0; j < [crainsfc[i][@"predictions"] count]; j++)
+        {
+            yavg = yavg + [crainsfc[i][@"predictions"][j] floatValue];
+        }
+        yavg = yavg / [crainsfc[0][@"predictions"] count];
+        float stddev = 0.0;
+        for (j = 0; j < [crainsfc[i][@"predictions"] count]; j++)
+        {
+            float t = [crainsfc[i][@"predictions"][j] floatValue] - yavg;
+            stddev = stddev + (t * t);
+            t = [crainsfc[i][@"predictions"][j] floatValue] - yavg;
+            stddev = stddev + (t * t);
+        }
+        stddev = sqrt(stddev / ([crainsfc[0][@"predictions"] count] * 2));
+        id y = [NSNumber numberWithFloat:[self normalizeForGraph:yavg]];
+        [rains addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:(yavg + stddev)]];
+        [rains addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:(yavg - stddev)]];
+        [rains addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:yavg]];
+        [rains addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+    }
+    return rains;
+}
+
+-(NSMutableArray *) getSnowDeviation
+{
+    int i, j;
+    NSMutableArray *snows = [NSMutableArray arrayWithCapacity:100];
+    for (i = 0; i < [csnowsfc count]; i++) {
+        id x = [NSNumber numberWithFloat:0 + i * 0.25];
+        float yavg = 0.0;
+        for (j = 0; j < [csnowsfc[i][@"predictions"] count]; j++)
+        {
+            yavg = yavg + [csnowsfc[i][@"predictions"][j] floatValue];
+        }
+        yavg = yavg / [csnowsfc[0][@"predictions"] count];
+        float stddev = 0.0;
+        for (j = 0; j < [csnowsfc[i][@"predictions"] count]; j++)
+        {
+            float t = [csnowsfc[i][@"predictions"][j] floatValue] - yavg;
+            stddev = stddev + (t * t);
+            t = [csnowsfc[i][@"predictions"][j] floatValue] - yavg;
+            stddev = stddev + (t * t);
+        }
+        stddev = sqrt(stddev / ([csnowsfc[0][@"predictions"] count] * 2));
+        id y = [NSNumber numberWithFloat:[self normalizeForGraph:yavg]];
+        [snows addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:(yavg + stddev)]];
+        [snows addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:(yavg - stddev)]];
+        [snows addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+        y = [NSNumber numberWithFloat:[self normalizeForGraph:yavg]];
+        [snows addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
+    }
+    return snows;
 }
 
 -(float) KtoF:(float)k
