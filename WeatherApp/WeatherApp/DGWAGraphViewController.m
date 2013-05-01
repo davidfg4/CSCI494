@@ -9,8 +9,15 @@
 #import "DGWAGraphViewController.h"
 
 @implementation DGWAGraphViewController
+{
+    IBOutlet CPTGraphHostingView *graphView;
+}
 
-@synthesize dataForPlot;
+@synthesize tempData;
+@synthesize tempDevData;
+@synthesize rainData;
+@synthesize snowData;
+@synthesize lineData;
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
@@ -29,7 +36,7 @@
     CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
     //kCPTDarkGradientTheme, kCPTPlainBlackTheme, kCPTPlainWhiteTheme, kCPTSlateTheme, and kCPTStocksTheme
     [graph applyTheme:theme];
-    CPTGraphHostingView *hostingView = (CPTGraphHostingView *)self.view;
+    CPTGraphHostingView *hostingView = (CPTGraphHostingView *)graphView;
     hostingView.collapsesLayers = NO; // Setting to YES reduces GPU memory usage, but can slow drawing/scrolling
     hostingView.hostedGraph     = graph;
     
@@ -41,7 +48,7 @@
     // Setup plot space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
     plotSpace.allowsUserInteraction = YES;
-    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-1.0) length:CPTDecimalFromFloat(10.0)];
+    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-0.5) length:CPTDecimalFromFloat(4.0)];
     plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-10.0) length:CPTDecimalFromFloat(100.0)];
     
     // Axes
@@ -57,14 +64,58 @@
     y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0");
     y.delegate             = self;
     
-    // Create a blue plot area
+    // Graph dotted line
+    CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    CPTMutableLineStyle *lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.lineWidth              = 1.0f;
+    lineStyle.lineColor              = [CPTColor blackColor];
+    lineStyle.dashPattern            = [NSArray arrayWithObjects:[NSNumber numberWithFloat:5.0f], [NSNumber numberWithFloat:5.0f], nil];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Line";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph rain
+    dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.miterLimit             = 1.0f;
+    lineStyle.lineWidth              = 3.0f;
+    lineStyle.lineColor              = [CPTColor greenColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Rain";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph snow
+    dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.miterLimit             = 1.0f;
+    lineStyle.lineWidth              = 3.0f;
+    lineStyle.lineColor              = [CPTColor blueColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Snow";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph temp std deviation
+    dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+    lineStyle   = [CPTMutableLineStyle lineStyle];
+    lineStyle.miterLimit             = 1.0f;
+    lineStyle.lineWidth              = 0.5f;
+    lineStyle.lineColor              = [CPTColor redColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+    dataSourceLinePlot.identifier    = @"Temp Std Dev";
+    dataSourceLinePlot.dataSource    = self;
+    [graph addPlot:dataSourceLinePlot];
+    
+    // Graph temperatures
     CPTScatterPlot *boundLinePlot  = [[CPTScatterPlot alloc] init];
-    CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
+    lineStyle = [CPTMutableLineStyle lineStyle];
     lineStyle.miterLimit        = 1.0f;
     lineStyle.lineWidth         = 3.0f;
-    lineStyle.lineColor         = [CPTColor blueColor];
+    lineStyle.lineColor         = [CPTColor redColor];
     boundLinePlot.dataLineStyle = lineStyle;
-    boundLinePlot.identifier    = @"Blue Plot";
+    boundLinePlot.identifier    = @"Temp Avg";
     boundLinePlot.dataSource    = self;
     [graph addPlot:boundLinePlot];
     
@@ -89,17 +140,8 @@
     boundLinePlot.plotSymbol = plotSymbol;
      */
     
-    // Create a green plot area
-    /*
-    CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
-    lineStyle                        = [CPTMutableLineStyle lineStyle];
-    lineStyle.lineWidth              = 3.f;
-    lineStyle.lineColor              = [CPTColor greenColor];
-    lineStyle.dashPattern            = [NSArray arrayWithObjects:[NSNumber numberWithFloat:5.0f], [NSNumber numberWithFloat:5.0f], nil];
-    dataSourceLinePlot.dataLineStyle = lineStyle;
-    dataSourceLinePlot.identifier    = @"Green Plot";
-    dataSourceLinePlot.dataSource    = self;
-     */
+
+     
     
     // Put an area gradient under the plot above
     /*
@@ -112,14 +154,17 @@
      */
     
     // Add some initial data
-    NSMutableArray *contentArray = [NSMutableArray arrayWithCapacity:100];
-    NSUInteger i;
-    for ( i = 0; i < 50; i++ ) {
-        id x = [NSNumber numberWithFloat:0 + i * 0.25];
-        id y = [NSNumber numberWithFloat:40.0 * rand() / (float)RAND_MAX + 40.0];
-        [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
-    }
-    self.dataForPlot = contentArray;
+    self.tempData = [masterWeatherData getTemps];
+    self.tempDevData = [masterWeatherData getTempDeviation];
+    self.rainData = [masterWeatherData getRains];
+    self.snowData = [masterWeatherData getSnows];
+    
+    self.lineData = [NSMutableArray arrayWithCapacity:100];
+    id xid = [NSNumber numberWithFloat:0];
+    id yid = [NSNumber numberWithFloat:20];
+    [self.lineData addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:xid, @"x", yid, @"y", nil]];
+    xid = [NSNumber numberWithFloat:15.75];
+    [self.lineData addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:xid, @"x", yid, @"y", nil]];
     
 #ifdef PERFORMANCE_TEST
     [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(changePlotRange) userInfo:nil repeats:YES];
@@ -140,19 +185,33 @@
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    return [dataForPlot count];
+    if ( [(NSString *)plot.identifier isEqualToString:@"Temp Std Dev"] ) {
+        return [tempDevData count];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Rain"] ) {
+        return [rainData count];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Snow"] ) {
+        return [snowData count];
+    }else if ( [(NSString *)plot.identifier isEqualToString:@"Line"] ) {
+        return [lineData count];
+    }
+    return [tempData count];
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     NSString *key = (fieldEnum == CPTScatterPlotFieldX ? @"x" : @"y");
-    NSNumber *num = [[dataForPlot objectAtIndex:index] valueForKey:key];
+    NSNumber *num;
     
-    // Green plot gets shifted above the blue
-    if ( [(NSString *)plot.identifier isEqualToString:@"Green Plot"] ) {
-        if ( fieldEnum == CPTScatterPlotFieldY ) {
-            num = [[dataForPlot objectAtIndex:index] valueForKey:key];
-        }
+    if ( [(NSString *)plot.identifier isEqualToString:@"Temp Std Dev"] ) {
+        num = [[tempDevData objectAtIndex:index] valueForKey:key];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Temp Avg"] ) {
+        num = [[tempData objectAtIndex:index] valueForKey:key];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Rain"] ) {
+        num = [[rainData objectAtIndex:index] valueForKey:key];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Snow"] ) {
+        num = [[snowData objectAtIndex:index] valueForKey:key];
+    } else if ( [(NSString *)plot.identifier isEqualToString:@"Line"] ) {
+        num = [[lineData objectAtIndex:index] valueForKey:key];
     }
     return num;
 }
@@ -162,34 +221,17 @@
 
 -(BOOL)axis:(CPTAxis *)axis shouldUpdateAxisLabelsAtLocations:(NSSet *)locations
 {
-    static CPTTextStyle *positiveStyle = nil;
-    static CPTTextStyle *negativeStyle = nil;
-    
     NSFormatter *formatter = axis.labelFormatter;
     CGFloat labelOffset    = axis.labelOffset;
-    NSDecimalNumber *zero  = [NSDecimalNumber zero];
     
     NSMutableSet *newLabels = [NSMutableSet set];
     
     for ( NSDecimalNumber *tickLocation in locations ) {
         CPTTextStyle *theLabelTextStyle;
         
-        if ( [tickLocation isGreaterThanOrEqualTo:zero] ) {
-            if ( !positiveStyle ) {
-                CPTMutableTextStyle *newStyle = [axis.labelTextStyle mutableCopy];
-                newStyle.color = [CPTColor greenColor];
-                positiveStyle  = newStyle;
-            }
-            theLabelTextStyle = positiveStyle;
-        }
-        else {
-            if ( !negativeStyle ) {
-                CPTMutableTextStyle *newStyle = [axis.labelTextStyle mutableCopy];
-                newStyle.color = [CPTColor redColor];
-                negativeStyle  = newStyle;
-            }
-            theLabelTextStyle = negativeStyle;
-        }
+        CPTMutableTextStyle *newStyle = [axis.labelTextStyle mutableCopy];
+        newStyle.color = [CPTColor blackColor];
+        theLabelTextStyle = newStyle;
         
         NSString *labelString       = [formatter stringForObjectValue:tickLocation];
         CPTTextLayer *newLabelLayer = [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];

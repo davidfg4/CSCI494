@@ -17,6 +17,9 @@
     IBOutlet UILabel *tempF;
     IBOutlet UILabel *tempC;
     IBOutlet UIImageView *weatherIcon;
+    IBOutlet UILabel *rainLabel;
+    IBOutlet UILabel *snowLabel;
+    
     IBOutlet UILabel *date;
 }
 
@@ -27,6 +30,9 @@
     [tempF setText:[[NSString alloc] initWithFormat:@"%3.0f °F", [masterWeatherData KtoF:[masterWeatherData getAvgTemp]]]];
     [tempC setText:[[NSString alloc] initWithFormat:@"%3.1f °C", [masterWeatherData KtoC:[masterWeatherData getAvgTemp]]]];
     weatherIcon.image = [UIImage imageNamed:[masterWeatherData getIconName]];
+    [rainLabel setText:[[NSString alloc] initWithFormat:@"Rain: %2.0f%%", [masterWeatherData getRainChance]*100]];
+    [snowLabel setText:[[NSString alloc] initWithFormat:@"Snow: %2.0f%%", [masterWeatherData getSnowChance]*100]];
+    
     [date setText:[masterWeatherData getWeatherName]];
 }
 

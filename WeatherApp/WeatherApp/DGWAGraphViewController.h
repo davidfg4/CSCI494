@@ -14,9 +14,17 @@
 {
     CPTXYGraph *graph;
     
-    NSMutableArray *dataForPlot;
+    NSMutableArray *tempData;
+    NSMutableArray *tempDevData;
+    NSMutableArray *rainData;
+    NSMutableArray *snowData;
+    NSMutableArray *lineData;
 }
 
-@property (readwrite, strong, nonatomic) NSMutableArray *dataForPlot;
+@property (readwrite, strong, nonatomic) NSMutableArray *tempData;
+@property (readwrite, strong, nonatomic) NSMutableArray *tempDevData;
+@property (readwrite, strong, nonatomic) NSMutableArray *rainData;
+@property (readwrite, strong, nonatomic) NSMutableArray *snowData;
+@property (readwrite, strong, nonatomic) NSMutableArray *lineData;
 
 @end

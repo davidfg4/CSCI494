@@ -15,6 +15,13 @@
 
 -(float) getAvgTemp;
 -(NSString*) getIconName;
+-(float) getRainChance;
+-(float) getSnowChance;
+
+-(NSMutableArray *) getTemps;
+-(NSMutableArray *) getTempDeviation;
+-(NSMutableArray *) getRains;
+-(NSMutableArray *) getSnows;
 
 -(float) KtoF:(float)k;
 -(float) KtoC:(float)k;
