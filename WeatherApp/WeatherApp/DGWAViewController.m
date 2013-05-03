@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 David Gianforte. All rights reserved.
 //
 
+// Great job. With a little more UI polish, this could be a successful app.
+// Project grade: 100%
+// Course grade: 100%
+
 #import "DGWAViewController.h"
 
 @interface DGWAViewController ()
